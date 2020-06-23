@@ -10,14 +10,15 @@ public class PlayerController : MonoBehaviour
    public PlayerAttack player;
 
    public bool isGrounded;
-   float playerSpeedHorizontal = 3.8f;
+   float playerSpeedHorizontal = 3.5f;
    public bool canMove;
-   float jumpCooldown = 1.2f;
    private float nextJump;
+   public bool isAlive;
 
    //AUDIO
    public AudioSource audio;
    public AudioClip hit;
+   public AudioClip playerGotHit;
 
    [SerializeField]
    Transform groundCheck; 
@@ -28,12 +29,13 @@ public class PlayerController : MonoBehaviour
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         canMove = true;
+        isAlive = true;
  
     }
  
     // Update is called once per frame
     private void FixedUpdate () {
-        if(!canMove)
+        if(!canMove )
         {
             rb2d.velocity = Vector2.zero;
             animator.SetFloat("Speed", 0);
@@ -68,11 +70,6 @@ public class PlayerController : MonoBehaviour
             
             }
 
-            if(Input.GetKey("x") && isGrounded && Time.time > nextJump)
-            {
-                rb2d.velocity = new Vector2(rb2d.velocity.x, 4);
-                nextJump = Time.time + jumpCooldown;
-            }
            }
     
     public void getsHit()
@@ -80,4 +77,6 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Hit");
         audio.PlayOneShot(hit, 0.45f);
     }
+
+    
 }

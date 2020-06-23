@@ -41,10 +41,15 @@ public class Skull : MonoBehaviour
         audio.PlayOneShot(risada, 0.4f);
         player.GetComponent<PlayerAttack>().isDamaged = true;
         Invoke("notDamaged", 0.5f);
+        Invoke("stopSkullAudio", 3.0f);
     }
 
     void notDamaged()
     {
         player.GetComponent<PlayerAttack>().isDamaged = false;
+    }
+
+    void stopSkullAudio(){
+        audio.Stop();
     }
 }

@@ -8,15 +8,15 @@ public class PlayerAttack : MonoBehaviour
     //public float timer;
     
     public Transform attackPos;
-    public LayerMask whatIsEnemies;
     public float attackRange;
+    public LayerMask whatIsEnemies;
     public int damage;
     public StaminaBar staminaBar;
 
     public Animator attAnim;
     //public AudioSource source;
     public GameObject player;
-    float atkCooldown = 1.2f;
+    float atkCooldown = 1.7f;
     private float nextAtk;
     public bool canAtk;
     public bool isDamaged;

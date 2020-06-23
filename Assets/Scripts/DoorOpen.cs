@@ -26,6 +26,6 @@ public class DoorOpen : MonoBehaviour
     }
 
     void EndLevel(){
-        Application.LoadLevel("Demo");
+        Application.LoadLevel("Castle1");
     }
 }

@@ -21,7 +21,7 @@ public class DialogueHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if(dMan.dialogActive && Input.GetKey("z"))
+         if(dMan.dialogActive && Input.GetKey("x"))
         {
             dMan.dBox.SetActive(false);
             dMan.dialogActive = false;

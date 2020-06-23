@@ -6,6 +6,8 @@ public class CameraFollow2 : MonoBehaviour
 {
     public Transform player;
     public Vector3 offset;
+    public AudioSource audio;
+    public AudioClip music;
   
   void Update () 
   {

@@ -19,9 +19,9 @@ public class StaminaBar : MonoBehaviour
       staminaBarIsEmpty = false;
       maxStamina = 100;
       currentStamina = maxStamina;
-      slide.value = maxStamina; 
+      slide.value = maxStamina;
       staminaR = StartCoroutine(staminaRegen());
-      isTired = false;  
+      isTired = false;
     }
 
     // Update is called once per frame
@@ -34,7 +34,6 @@ public class StaminaBar : MonoBehaviour
           playerIsTired();
           Invoke("playerIsNotTired", 3.0f);
           slide.value = currentStamina;
-          //player.GetComponent<PlayerAttack>().canAtk = false;
       }
       else
       {
